@@ -13,8 +13,8 @@ npm run preview  # serve the production build locally
 
 ## Page order
 
-Hero (full-bleed photo panel) → inline callback bar → services → 24/7 emergency →
-how it works → emergency CTA → about → service areas → FAQ → call CTA →
+Hero (full-bleed photo panel) → inline callback bar → emergency CTA → services →
+24/7 emergency → how it works → about → service areas → call CTA →
 contact form + map → footer.
 
 ## Where to change things

@@ -496,7 +496,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(34px, 5vw, 68px) 0 clamp(26px, 3vw, 40px);
+  padding: clamp(34px, 5vw, 68px) 0 clamp(80px, 9vw, 124px);
   color: #fff;
 }
 .hero__photo {
@@ -700,15 +700,25 @@ section {
 /* ============================ callback bar ============================ */
 
 .cbbar {
+  display: flow-root;
   background: var(--paper);
-  padding-bottom: clamp(20px, 3vw, 34px);
+  padding-bottom: clamp(26px, 3.5vw, 44px);
 }
 .cbbar__card {
-  background: var(--paper);
-  border: 1px solid var(--line);
+  position: relative;
+  z-index: 3;
+  margin-top: clamp(-88px, -6vw, -40px);
+  background: var(--mint);
+  border: 1px solid #dde8da;
+  border-top: 3px solid var(--green);
   border-radius: var(--r-card);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 18px 40px -28px rgba(30, 70, 35, 0.45);
   padding: clamp(20px, 2.4vw, 28px);
+}
+.cbbar__card .field input,
+.cbbar__card .field select {
+  background: var(--paper);
+  border-color: #dde8da;
 }
 
 /* ============================ forms ============================ */
