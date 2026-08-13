@@ -1,38 +1,66 @@
 import { company } from '../data/site'
-import photo from '../assets/photos/tech-keypad.jpg'
-import { Check } from './Icons'
+import van from '../assets/photos/van.png'
+import { Phone, Shield, Clock, KeyIcon, Arrow } from './Icons'
 
-const promises = [
-  ['Price first', 'You hear the number over the phone or at the curb. It does not move once the tools come out.'],
-  ['Non-destructive first', 'Picking, bypassing and decoding before drilling. Most doors open without a mark.'],
-  ['Licensed work', `Every job runs under license ${company.license}, bonded and insured, with ID on request.`],
-  ['We come to you', 'Fully stocked mobile vans, so keys are cut and locks are fitted right where you are.'],
+const pillars = [
+  {
+    icon: Shield,
+    title: 'Our promise',
+    body: 'The price you hear on the phone is the price at the end. Non-destructive entry wherever the lock allows.',
+  },
+  {
+    icon: Clock,
+    title: 'Our standard',
+    body: 'Licensed, bonded and insured work, finished on the first visit because the van carries the parts.',
+  },
 ]
 
 export default function About() {
   return (
     <section className="about" id="about">
       <div className="wrap about__grid">
-        <div className="about__copy" data-reveal>
-          <p className="eyebrow">About PNW Lock and Key</p>
+        <div className="about__left" data-reveal>
+          <p className="eyebrow">
+            <KeyIcon size={16} />
+            <span>Who we are</span>
+          </p>
           <h2 className="about__title">
-            Local locksmiths who <em>answer the phone</em>
+            Your local partner for <em>reliable locksmith work</em>
           </h2>
-          <p>
+
+          <figure className="about__frame">
+            <span className="about__tab" aria-hidden="true">
+              <strong>24/7</strong>
+              <span>Always open</span>
+            </span>
+            <img src={van} alt="PNW Lock and Key service van" width="1100" height="520" loading="lazy" />
+          </figure>
+        </div>
+
+        <div className="about__right" data-reveal>
+          <p className="about__text">
             {company.name} started because too many people around here were calling a national
             number, waiting two hours, and then hearing a price they had never agreed to. That is
             not how a trade should work.
           </p>
-          <p>
+          <p className="about__text">
             We are a small crew of licensed locksmiths based in Tigard, Oregon, serving Portland and
             the surrounding communities. We cut and program car keys on site, rekey homes the same
             afternoon someone moves in, and keep commercial doors code compliant for property
             managers who cannot afford a stuck exit device.
           </p>
-          <p>
-            The rain does not stop, so neither do we. Call at noon or at three in the morning and
-            you get a person, a time, and a price.
-          </p>
+
+          <div className="pillars">
+            {pillars.map(({ icon: Icon, title, body }) => (
+              <article className="pillar" key={title}>
+                <span className="pillar__ico" aria-hidden="true">
+                  <Icon size={20} />
+                </span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </article>
+            ))}
+          </div>
 
           <dl className="about__facts">
             <div>
@@ -52,34 +80,26 @@ export default function About() {
               <dd>Tigard, OR</dd>
             </div>
           </dl>
-        </div>
 
-        <div className="about__side" data-reveal>
-          <div className="about__media">
-            <img
-              src={photo}
-              alt="A PNW Lock and Key locksmith fitting a keypad deadbolt on a front door"
-              width="1200"
-              height="675"
-              loading="lazy"
-            />
+          <div className="about__cta">
+            <a className="btn btn--primary btn--pillArrow" href="#services">
+              <span>See what we do</span>
+              <span className="btn__arrow" aria-hidden="true">
+                <Arrow size={15} />
+              </span>
+            </a>
+            <a className="about__phone" href={company.phoneHref}>
+              <span className="about__phoneIco" aria-hidden="true">
+                <Phone size={20} />
+              </span>
+              <span>
+                <strong>{company.phoneDisplay}</strong>
+                Emergency locksmith support
+              </span>
+            </a>
           </div>
-          <ul className="about__promises">
-            {promises.map(([title, body], i) => (
-              <li key={title} style={{ '--d': `${i * 80}ms` }}>
-                <span className="about__tick" aria-hidden="true">
-                  <Check size={15} />
-                </span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
-
     </section>
   )
 }

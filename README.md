@@ -62,12 +62,16 @@ API key is needed. If you later want styled maps or a custom marker, swap
 
 Brand photos live in `src/assets/photos/`, resized and compressed for the web:
 
-- `tech-keypad.jpg` — About section
-- `lock-service.jpg` — 24/7 emergency section
-- `van-commercial.jpg` — emergency CTA band
-- `van-home.jpg` — currently unused in layout; kept for future use
+- `lock-service.jpg` — automotive service card (see note below)
+- `van-commercial.jpg` — emergency CTA band and commercial service card
+- `van-home.jpg` — 24/7 emergency section
 - `hero-tech.jpg` — full-bleed hero panel background
-- `van.png` — transparent cut-out, currently unused
+- `tech-keypad.jpg` — residential service card
+- `van.png` — transparent cut-out, the About section image
+
+**Photo gap:** the automotive service card currently uses `lock-service.jpg`,
+which shows a door lock, not a vehicle. A car-key or car-door photo would be a
+straight swap in `src/components/Services.jsx` (`shots.automotive`).
 
 ## Logo assets
 
