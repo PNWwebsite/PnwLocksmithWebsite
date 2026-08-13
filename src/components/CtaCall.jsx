@@ -1,4 +1,5 @@
 import { company } from '../data/site'
+import Ridgeline from './Ridgeline'
 import { Phone } from './Icons'
 
 export default function CtaCall() {
@@ -23,6 +24,8 @@ export default function CtaCall() {
           </a>
         </div>
       </div>
+
+      <Ridgeline className="ridge--toMint" />
     </section>
   )
 }

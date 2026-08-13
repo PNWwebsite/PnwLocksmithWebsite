@@ -63,7 +63,7 @@ export default function Services() {
         </div>
       </div>
 
-      <Ridgeline className="ridge--toMist" />
+      <Ridgeline className="ridge--toMint" />
     </section>
   )
 }

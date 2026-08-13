@@ -1,5 +1,4 @@
 import { areas } from '../data/site'
-import van from '../assets/photos/van.png'
 
 export default function Areas() {
   return (
@@ -16,16 +15,6 @@ export default function Areas() {
             anyway and we will tell you straight whether we can get to you.
           </p>
         </header>
-
-        <div className="areas__van" data-reveal>
-          <img
-            src={van}
-            alt="PNW Lock and Key service van"
-            width="1100"
-            height="520"
-            loading="lazy"
-          />
-        </div>
 
         <div className="areas__columns">
           {areas.map((group, i) => (

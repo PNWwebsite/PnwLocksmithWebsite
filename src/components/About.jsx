@@ -55,7 +55,7 @@ export default function About() {
         </div>
 
         <div className="about__side" data-reveal>
-          <div className="about__media framed">
+          <div className="about__media">
             <img
               src={photo}
               alt="A PNW Lock and Key locksmith fitting a keypad deadbolt on a front door"

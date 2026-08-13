@@ -6,7 +6,7 @@ export default function Emergency() {
   return (
     <section className="emerg" id="emergency">
       <div className="wrap emerg__grid">
-        <div className="emerg__media framed" data-reveal>
+        <div className="emerg__media" data-reveal>
           <img
             src={photo}
             alt="A PNW Lock and Key locksmith servicing a lock cylinder beside the service van"

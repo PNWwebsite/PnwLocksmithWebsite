@@ -18,43 +18,51 @@ export default function ContactForm({ variant = 'full', id }) {
   const [errors, setErrors] = useState({})
   const [sent, setSent] = useState(false)
 
+  const isBar = variant === 'bar'
+  const fieldId = (n) => `${id || variant}-${n}`
+
   const set = (key) => (e) => {
     setValues((v) => ({ ...v, [key]: e.target.value }))
     setErrors((err) => ({ ...err, [key]: undefined }))
+  }
+
+  const reset = () => {
+    setValues(empty)
+    setSent(false)
   }
 
   const submit = (e) => {
     e.preventDefault()
     const next = {}
     if (!values.name.trim()) next.name = 'Add a name so we know who to ask for.'
-    const digits = values.phone.replace(/\D/g, '')
-    if (digits.length < 10) next.phone = 'Enter a 10-digit number we can call back.'
+    if (values.phone.replace(/\D/g, '').length < 10) {
+      next.phone = 'Enter a 10-digit number we can call back.'
+    }
     setErrors(next)
     if (Object.keys(next).length) return
 
     // Wire this up to your form handler (Formspree, Netlify Forms, your CRM).
-    // For now the request is logged and the caller sees a confirmation.
     console.log('Callback request', values)
     setSent(true)
   }
-
-  const fieldId = (n) => `${id || variant}-${n}`
 
   if (sent) {
     return (
       <div className={`form form--${variant} form--sent`} id={id}>
         <span className="form__tick" aria-hidden="true">
-          <Check size={26} />
+          <Check size={isBar ? 22 : 26} />
         </span>
-        <h3>Request received</h3>
-        <p>
-          A locksmith will call {values.phone} shortly. If you are locked out right now, calling is
-          faster.
-        </p>
+        <div className="form__sentBody">
+          <h3>Request received</h3>
+          <p>
+            A locksmith will call {values.phone} shortly. If you are locked out right now, calling
+            is faster.
+          </p>
+        </div>
         <a className="btn btn--primary" href={company.phoneHref}>
           Call {company.phoneDisplay}
         </a>
-        <button className="form__reset" type="button" onClick={() => { setValues(empty); setSent(false) }}>
+        <button className="form__reset" type="button" onClick={reset}>
           Send another request
         </button>
       </div>
@@ -63,23 +71,17 @@ export default function ContactForm({ variant = 'full', id }) {
 
   return (
     <form className={`form form--${variant}`} id={id} onSubmit={submit} noValidate>
-      <div className="form__head">
-        <p className="eyebrow">Request a callback</p>
-        <h3>
-          {variant === 'bar'
-            ? 'Tell us what happened and we will call you back'
-            : variant === 'compact'
-              ? 'Tell us what happened'
-              : 'Send us the details'}
-        </h3>
-        {variant !== 'bar' && (
+      {!isBar && (
+        <div className="form__head">
+          <p className="eyebrow">Request a callback</p>
+          <h3>{variant === 'compact' ? 'Tell us what happened' : 'Send us the details'}</h3>
           <p className="form__sub">
             {variant === 'compact'
               ? 'We answer around the clock and give you a price before any work starts.'
               : 'Fill this in and a licensed locksmith calls you back.'}
           </p>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className="form__grid">
         <div className="field">
@@ -110,19 +112,19 @@ export default function ContactForm({ variant = 'full', id }) {
           {errors.phone && <p className="field__error">{errors.phone}</p>}
         </div>
 
-        {variant !== 'bar' && (
-          <div className="field">
-            <label htmlFor={fieldId('city')}>
-              {variant === 'full' ? 'City or cross street' : 'City'}
-            </label>
-            <input
-              id={fieldId('city')}
-              type="text"
-              value={values.city}
-              onChange={set('city')}
-              placeholder="Beaverton"
-            />
-          </div>
+        {!isBar && (
+        <div className="field">
+          <label htmlFor={fieldId('city')}>
+            {variant === 'full' ? 'City or cross street' : 'City'}
+          </label>
+          <input
+            id={fieldId('city')}
+            type="text"
+            value={values.city}
+            onChange={set('city')}
+            placeholder="Beaverton"
+          />
+        </div>
         )}
 
         <div className="field">
@@ -150,17 +152,17 @@ export default function ContactForm({ variant = 'full', id }) {
           </div>
         )}
 
-        {variant === 'bar' && (
-          <div className="field form__submit">
-            <button className="btn btn--primary btn--block" type="submit">
+        {isBar && (
+          <div className="field field--submit">
+            <button className="btn btn--primary" type="submit">
               <span>Request a callback</span>
-              <Arrow size={18} />
+              <Arrow size={17} />
             </button>
           </div>
         )}
       </div>
 
-      {variant !== 'bar' && (
+      {!isBar && (
         <button className="btn btn--primary btn--block" type="submit">
           <span>Request a callback</span>
           <Arrow size={18} />
@@ -168,8 +170,8 @@ export default function ContactForm({ variant = 'full', id }) {
       )}
 
       <p className="form__note">
-        Locked out right now? Call{' '}
-        <a href={company.phoneHref}>{company.phoneDisplay}</a> — someone picks up at any hour.
+        Locked out right now? Call <a href={company.phoneHref}>{company.phoneDisplay}</a> — someone
+        picks up at any hour.
       </p>
     </form>
   )
