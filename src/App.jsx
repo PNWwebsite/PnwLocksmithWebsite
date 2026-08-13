@@ -24,11 +24,11 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <CallbackBar />
+        <CtaBand />
         <Services />
         <Emergency />
         <Steps />
-        <CtaBand />
+        <CallbackBar />
         <About />
         <Areas />
         <Faq />
