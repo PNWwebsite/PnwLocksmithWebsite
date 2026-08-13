@@ -39,15 +39,20 @@ export default function About() {
 
         <div className="about__right" data-reveal>
           <p className="about__text">
-            {company.name} started because too many people around here were calling a national
-            number, waiting two hours, and then hearing a price they had never agreed to. That is
-            not how a trade should work.
+            {company.name} was built around a simple idea: locksmith service should be fast,
+            straightforward, and local. No long waits, no surprise pricing, and no call centers
+            sending out whoever happens to be available.
           </p>
           <p className="about__text">
-            We are a small crew of licensed locksmiths based in Tigard, Oregon, serving Portland and
-            the surrounding communities. We cut and program car keys on site, rekey homes the same
-            afternoon someone moves in, and keep commercial doors code compliant for property
-            managers who cannot afford a stuck exit device.
+            We&rsquo;re a licensed locksmith team based in Tigard, Oregon, serving Portland and the
+            surrounding communities. From car key replacement and programming to residential
+            rekeying and commercial lock and door services, we handle the work on-site with clear
+            communication and dependable service.
+          </p>
+          <p className="about__text">
+            Whether you&rsquo;re locked out, moving into a new home, need a replacement car key, or
+            manage a property that needs reliable locksmith support, our goal is the same: show up
+            prepared, do the job right, and make the process easy.
           </p>
 
           <div className="pillars">

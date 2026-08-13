@@ -44,7 +44,7 @@ export default function Hero() {
             <h1 className="hero__title">
               Locked out? <em>We&rsquo;re</em>
               <br />
-              <em>already moving.</em>
+              <em>on our way.</em>
             </h1>
 
             <p className="hero__lede">
@@ -52,28 +52,25 @@ export default function Hero() {
               automotive lock and key service, answered around the clock.
             </p>
 
-            <a className="btn btn--primary btn--pillArrow" href={company.phoneHref}>
-              <Phone size={18} />
-              <span>{company.phoneDisplay}</span>
-              <span className="btn__arrow" aria-hidden="true">
-                <Arrow size={16} />
-              </span>
-            </a>
+            <div className="hero__actions">
+              <a className="btn btn--primary btn--pillArrow" href={company.phoneHref}>
+                <Phone size={18} />
+                <span>{company.phoneDisplay}</span>
+                <span className="btn__arrow" aria-hidden="true">
+                  <Arrow size={16} />
+                </span>
+              </a>
+              <a className="btn btn--onPhoto btn--pillArrow" href="#services">
+                <span>See our services</span>
+                <span className="btn__arrow" aria-hidden="true">
+                  <Arrow size={16} />
+                </span>
+              </a>
+            </div>
           </div>
 
           <aside className="hero__aside">
             <Badge />
-            <h2 className="hero__asideTitle">Professional locksmith services you can rely on</h2>
-            <p className="hero__asideText">
-              Keys cut and programmed on site, locks rekeyed the same visit, and a price agreed
-              before any work starts.
-            </p>
-            <a className="btn btn--onPhoto btn--pillArrow" href="#services">
-              <span>See our services</span>
-              <span className="btn__arrow" aria-hidden="true">
-                <Arrow size={16} />
-              </span>
-            </a>
           </aside>
         </div>
 

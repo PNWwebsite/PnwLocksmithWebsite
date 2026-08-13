@@ -18,7 +18,8 @@ export default function Contact() {
             Let&rsquo;s solve your <em>lock &amp; key</em> problem
           </h2>
           <p className="contact__lede">
-            Call any hour and speak to a locksmith, or send your details and we will call you back.
+            Locked out or need help fast? Call anytime to speak with a locksmith, or send us your
+            details and we&rsquo;ll get back to you quickly.
           </p>
         </header>
       </div>

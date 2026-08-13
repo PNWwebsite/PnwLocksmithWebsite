@@ -29,7 +29,7 @@ export default function Steps() {
             <span>How it works</span>
           </p>
           <h2 className="sechead__title">
-            <em>Three simple steps</em> from locked out to back inside
+            <em>3 simple steps</em> from locked out to back inside
           </h2>
         </header>
 

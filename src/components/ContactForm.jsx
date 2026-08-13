@@ -92,7 +92,7 @@ export default function ContactForm({ variant = 'full', id }) {
             autoComplete="name"
             value={values.name}
             onChange={set('name')}
-            placeholder="Jordan Reyes"
+            placeholder="John Doe"
             aria-invalid={!!errors.name}
           />
           {errors.name && <p className="field__error">{errors.name}</p>}

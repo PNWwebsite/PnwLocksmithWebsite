@@ -22,9 +22,14 @@ export default function Areas() {
                 Areas we <em>serve</em>
               </h2>
               <p className="areas__lede">
-                We are mobile, so the work happens at your door. Our vans cover Tigard, Portland
-                and the surrounding communities. If your town is not listed, call anyway and we
-                will tell you straight whether we can get to you.
+                We&rsquo;re a fully mobile locksmith company, which means we bring the service
+                directly to you. Our technicians travel throughout Tigard, Portland, and
+                surrounding communities across five counties, handling everything on-site at your
+                home, business, or vehicle.
+              </p>
+              <p className="areas__lede">
+                If you don&rsquo;t see your city listed in our service area, give us a call.
+                We&rsquo;ll let you know right away whether we can send a technician to you.
               </p>
               <a className="btn btn--primary btn--pillArrow" href={company.phoneHref}>
                 <span>Check your address</span>

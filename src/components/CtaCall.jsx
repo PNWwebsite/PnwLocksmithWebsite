@@ -15,13 +15,13 @@ export default function CtaCall() {
               <span>Need a locksmith fast?</span>
             </p>
             <h2 className="ctacall__title">
-              <em>Quick, licensed and professional</em>
+              <em>Locked out?</em>
               <br />
-              whenever you need us
+              We get you back in.
             </h2>
             <p className="ctacall__lede">
-              One number, any hour. Emergencies are dispatched ahead of scheduled work, and you get
-              a price before anyone touches your door.
+              One number, any hour. Emergencies are dispatched ahead of scheduled work, and you
+              get a price before anyone touches your door.
             </p>
             <div className="ctacall__actions">
               <a className="btn btn--primary btn--lg btn--pillArrow" href={company.phoneHref}>
