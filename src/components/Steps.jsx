@@ -1,5 +1,7 @@
 import { company } from '../data/site'
-import { Phone } from './Icons'
+import shotA from '../assets/photos/hero-tech.jpg'
+import shotB from '../assets/photos/lock-service.jpg'
+import { KeyIcon } from './Icons'
 
 // A real sequence, so the numbering carries information rather than decoration.
 const steps = [
@@ -9,41 +11,57 @@ const steps = [
   },
   {
     title: 'A stocked van comes to you',
-    body: 'We carry key blanks, cylinders, programming equipment and commercial hardware, so the job is finished on the first visit rather than scheduled for a second one.',
+    body: 'We carry key blanks, cylinders, programming equipment and commercial hardware, so the job finishes on the first visit rather than getting booked for a second.',
   },
   {
-    title: 'You are back in, and back to your day',
-    body: 'Non-destructive entry wherever the lock allows. Then keys cut, locks rekeyed or new hardware fitted on the spot, and the price you were quoted at the start.',
+    title: 'You are back in, at the price quoted',
+    body: 'Non-destructive entry wherever the lock allows, then keys cut, locks rekeyed or new hardware fitted on the spot. The number does not move at the end.',
   },
 ]
 
 export default function Steps() {
   return (
-    <section className="steps" aria-label="How it works">
+    <section className="process" id="process">
       <div className="wrap">
         <header className="sechead sechead--center" data-reveal>
-          <p className="eyebrow">How it works</p>
+          <p className="eyebrow">
+            <KeyIcon size={16} />
+            <span>How it works</span>
+          </p>
           <h2 className="sechead__title">
-            Three steps, <em>no surprises</em>
+            <em>Three simple steps</em> from locked out to back inside
           </h2>
         </header>
 
-        <ol className="steps__list">
-          {steps.map((s, i) => (
-            <li className="step" key={s.title} data-reveal style={{ '--d': `${i * 110}ms` }}>
-              <span className="step__num" aria-hidden="true">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <h3 className="step__title">{s.title}</h3>
-              <p className="step__body">{s.body}</p>
-            </li>
-          ))}
-        </ol>
+        <div className="process__grid">
+          <div className="process__media" data-reveal>
+            <span className="process__link" aria-hidden="true" />
+            <figure className="process__shot process__shot--a">
+              <img src={shotA} alt="A PNW Lock and Key locksmith working on a front door lock" loading="lazy" />
+            </figure>
+            <figure className="process__shot process__shot--b">
+              <img src={shotB} alt="Close-up of a lock cylinder being serviced" loading="lazy" />
+            </figure>
+          </div>
 
-        <p className="steps__foot" data-reveal>
+          <ol className="process__list">
+            {steps.map((s, i) => (
+              <li className="pstep" key={s.title} data-reveal style={{ '--d': `${i * 110}ms` }}>
+                <span className="pstep__num" aria-hidden="true">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <h3>{s.title}</h3>
+                  <p>{s.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <p className="process__foot" data-reveal>
           <a className="btn btn--primary btn--lg" href={company.phoneHref}>
-            <Phone size={19} />
-            <span>Call {company.phoneDisplay}</span>
+            Start with a call — {company.phoneDisplay}
           </a>
         </p>
       </div>

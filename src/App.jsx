@@ -7,6 +7,7 @@ import Emergency from './components/Emergency'
 import Steps from './components/Steps'
 import About from './components/About'
 import Areas from './components/Areas'
+import Faq from './components/Faq'
 import CtaCall from './components/CtaCall'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -30,6 +31,7 @@ export default function App() {
         <Steps />
         <About />
         <Areas />
+        <Faq />
         <CtaCall />
         <Contact />
       </main>

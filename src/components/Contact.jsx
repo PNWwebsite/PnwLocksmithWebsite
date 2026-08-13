@@ -1,58 +1,66 @@
 import { company } from '../data/site'
 import ContactForm from './ContactForm'
-import { Phone, Pin, Clock, Shield } from './Icons'
+import bg from '../assets/photos/hero-tech.jpg'
+import { KeyIcon, Phone, Pin, Clock, Shield } from './Icons'
 
 export default function Contact() {
   return (
     <section className="contact" id="contact">
-      <div className="wrap">
-        <header className="sechead" data-reveal>
-          <p className="eyebrow">Contact</p>
-          <h2 className="sechead__title">
-            Get a locksmith <em>on the way</em>
+      <div className="contact__top">
+        <img className="contact__bg" src={bg} alt="" aria-hidden="true" loading="lazy" />
+        <div className="contact__scrim" aria-hidden="true" />
+        <header className="wrap contact__head" data-reveal>
+          <p className="eyebrow eyebrow--onDark">
+            <KeyIcon size={16} />
+            <span>Contact us</span>
+          </p>
+          <h2 className="contact__title">
+            Let&rsquo;s solve your <em>lock &amp; key</em> problem
           </h2>
-          <p className="sechead__lede">
+          <p className="contact__lede">
             Call any hour and speak to a locksmith, or send your details and we will call you back.
           </p>
         </header>
+      </div>
 
-        <div className="contact__grid">
-          <div className="contact__panel" data-reveal>
+      <div className="wrap">
+        <div className="contact__card" data-reveal>
+          <div className="contact__panel">
+            <h3 className="contact__panelTitle">
+              We are available 24/7 for emergencies and everything else
+            </h3>
+            <p className="contact__panelText">
+              Licensed, bonded and insured, working out of Tigard and covering the metro.
+            </p>
+
             <ul className="contact__details">
               <li>
-                <span className="contact__ico" aria-hidden="true"><Phone size={18} /></span>
+                <span className="contact__ico" aria-hidden="true"><Phone size={19} /></span>
                 <div>
-                  <p className="contact__k">Phone</p>
+                  <p className="contact__k">Phone number</p>
                   <a className="contact__v contact__v--big" href={company.phoneHref}>
                     {company.phoneDisplay}
                   </a>
                 </div>
               </li>
               <li>
-                <span className="contact__ico" aria-hidden="true"><Pin size={18} /></span>
-                <div>
-                  <p className="contact__k">Address</p>
-                  <a
-                    className="contact__v"
-                    href={company.mapLink}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {company.street}
-                    <br />
-                    {company.city}, {company.state} {company.zip}
-                  </a>
-                </div>
-              </li>
-              <li>
-                <span className="contact__ico" aria-hidden="true"><Clock size={18} /></span>
+                <span className="contact__ico" aria-hidden="true"><Clock size={19} /></span>
                 <div>
                   <p className="contact__k">Hours</p>
                   <p className="contact__v">{company.hours}</p>
                 </div>
               </li>
               <li>
-                <span className="contact__ico" aria-hidden="true"><Shield size={18} /></span>
+                <span className="contact__ico" aria-hidden="true"><Pin size={19} /></span>
+                <div>
+                  <p className="contact__k">Address</p>
+                  <a className="contact__v" href={company.mapLink} target="_blank" rel="noreferrer">
+                    {company.street}, {company.city}, {company.state} {company.zip}
+                  </a>
+                </div>
+              </li>
+              <li>
+                <span className="contact__ico" aria-hidden="true"><Shield size={19} /></span>
                 <div>
                   <p className="contact__k">License</p>
                   <p className="contact__v">{company.license}</p>
@@ -69,12 +77,9 @@ export default function Contact() {
                 allowFullScreen
               />
             </div>
-            <a className="contact__directions" href={company.mapLink} target="_blank" rel="noreferrer">
-              Get directions
-            </a>
           </div>
 
-          <div className="contact__form" data-reveal>
+          <div className="contact__formWrap">
             <ContactForm variant="full" id="contact-form" />
           </div>
         </div>
