@@ -1,5 +1,5 @@
 import { company, emergencies } from '../data/site'
-import photo from '../assets/photos/van-home.jpg'
+import photo from '../assets/photos/night-call.jpg'
 import { Phone, Clock, Check } from './Icons'
 
 export default function Emergency() {
@@ -9,7 +9,7 @@ export default function Emergency() {
         <div className="emerg__media" data-reveal>
           <img
             src={photo}
-            alt="PNW Lock and Key service van outside a home"
+            alt="A PNW Lock and Key locksmith arriving at a home after dark with tools in hand"
             width="1200"
             height="675"
             loading="lazy"

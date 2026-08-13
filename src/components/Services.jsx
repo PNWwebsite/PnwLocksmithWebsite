@@ -1,7 +1,7 @@
 import { services, brands, company } from '../data/site'
 import residentialShot from '../assets/photos/tech-keypad.jpg'
 import commercialShot from '../assets/photos/van-commercial.jpg'
-import automotiveShot from '../assets/photos/lock-service.jpg'
+import automotiveShot from '../assets/photos/auto-key.jpg'
 import Ridgeline from './Ridgeline'
 import { icons, Check, Phone, KeyIcon } from './Icons'
 
@@ -14,7 +14,7 @@ const shots = {
 const alts = {
   residential: 'A PNW Lock and Key locksmith fitting a keypad deadbolt on a front door',
   commercial: 'PNW Lock and Key service van parked outside a commercial storefront',
-  automotive: 'A locksmith working a lock cylinder beside the PNW Lock and Key van',
+  automotive: 'A PNW Lock and Key locksmith programming a car key fob beside a customer vehicle',
 }
 
 export default function Services() {

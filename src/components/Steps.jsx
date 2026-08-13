@@ -1,6 +1,6 @@
 import { company } from '../data/site'
-import shotA from '../assets/photos/hero-tech.jpg'
-import shotB from '../assets/photos/lock-service.jpg'
+import shotA from '../assets/photos/van-tools.jpg'
+import shotB from '../assets/photos/lock-door.jpg'
 import { KeyIcon } from './Icons'
 
 // A real sequence, so the numbering carries information rather than decoration.
@@ -37,10 +37,10 @@ export default function Steps() {
           <div className="process__media" data-reveal>
             <span className="process__link" aria-hidden="true" />
             <figure className="process__shot process__shot--a">
-              <img src={shotA} alt="A PNW Lock and Key locksmith working on a front door lock" loading="lazy" />
+              <img src={shotA} alt="Key programming equipment, blanks and picks laid out in the PNW Lock and Key van" loading="lazy" />
             </figure>
             <figure className="process__shot process__shot--b">
-              <img src={shotB} alt="Close-up of a lock cylinder being serviced" loading="lazy" />
+              <img src={shotB} alt="Close-up of a door lock cylinder being picked" loading="lazy" />
             </figure>
           </div>
 
