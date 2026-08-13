@@ -6,7 +6,7 @@ import { Check } from './Icons'
 const promises = [
   ['Price first', 'You hear the number over the phone or at the curb. It does not move once the tools come out.'],
   ['Non-destructive first', 'Picking, bypassing and decoding before drilling. Most doors open without a mark.'],
-  ['Licensed work', `Every job runs under ${company.license}, bonded and insured, with ID on request.`],
+  ['Licensed work', `Every job runs under license ${company.license}, bonded and insured, with ID on request.`],
   ['We come to you', 'Fully stocked mobile vans, so keys are cut and locks are fitted right where you are.'],
 ]
 
@@ -56,7 +56,7 @@ export default function About() {
         </div>
 
         <div className="about__side" data-reveal>
-          <div className="about__media">
+          <div className="about__media framed">
             <img
               src={photo}
               alt="A PNW Lock and Key locksmith fitting a keypad deadbolt on a front door"

@@ -6,8 +6,6 @@ import { Phone, Clock, Shield, Pin } from './Icons'
 export default function Hero() {
   return (
     <section className="hero" id="top">
-      <div className="hero__glow" aria-hidden="true" />
-
       <div className="wrap hero__grid">
         <div className="hero__copy">
           <p className="eyebrow eyebrow--onDark">
@@ -39,16 +37,31 @@ export default function Hero() {
 
           <ul className="hero__trust">
             <li>
-              <Clock size={18} />
-              <span>Answering 24/7, holidays included</span>
+              <span className="hero__trustIco" aria-hidden="true">
+                <Clock size={17} />
+              </span>
+              <span>
+                <strong>24/7</strong>
+                Holidays included
+              </span>
             </li>
             <li>
-              <Shield size={18} />
-              <span>Licensed {company.license} · bonded &amp; insured</span>
+              <span className="hero__trustIco" aria-hidden="true">
+                <Shield size={17} />
+              </span>
+              <span>
+                <strong>Licensed {company.license}</strong>
+                Bonded &amp; insured
+              </span>
             </li>
             <li>
-              <Pin size={18} />
-              <span>Fully stocked mobile vans</span>
+              <span className="hero__trustIco" aria-hidden="true">
+                <Pin size={17} />
+              </span>
+              <span>
+                <strong>Fully mobile</strong>
+                Stocked vans, we come to you
+              </span>
             </li>
           </ul>
         </div>

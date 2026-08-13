@@ -14,7 +14,7 @@ export default function CtaBand() {
               <Phone size={19} />
               <span>{company.phoneDisplay}</span>
             </a>
-            <p className="ctaband__hours">Answering 24 hours a day, 7 days a week</p>
+            <p className="ctaband__hours">Answering 24/7, holidays included</p>
           </div>
         </div>
 

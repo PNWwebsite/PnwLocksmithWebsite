@@ -12,8 +12,7 @@ export default function Contact() {
             Get a locksmith <em>on the way</em>
           </h2>
           <p className="sechead__lede">
-            We are based in Tigard, Oregon and come to you. Calling is the fastest way to reach a
-            locksmith, day or night — or send the details and we will call you back.
+            Call any hour and speak to a locksmith, or send your details and we will call you back.
           </p>
         </header>
 

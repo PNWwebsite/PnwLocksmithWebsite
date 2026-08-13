@@ -69,7 +69,7 @@ export default function ContactForm({ variant = 'full', id }) {
         <p className="form__sub">
           {variant === 'compact'
             ? 'We answer around the clock and give you a price before any work starts.'
-            : 'Fill this in and a licensed locksmith calls you back. Emergencies are dispatched first.'}
+            : 'Fill this in and a licensed locksmith calls you back.'}
         </p>
       </div>
 

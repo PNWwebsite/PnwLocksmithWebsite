@@ -7,8 +7,8 @@ export const company = {
   addressLine: '8920 SW Oak St 300B, Tigard, OR 97223',
   phoneDisplay: '(971) 666-8193',
   phoneHref: 'tel:+19716668193',
-  hours: 'Open 24 hours, 7 days a week',
-  license: 'OR LIC 70530CLS',
+  hours: '24/7',
+  license: '#70530CLS',
   email: 'dispatch@pnwlockandkey.com',
   mapEmbed:
     'https://www.google.com/maps?q=8920+SW+Oak+St+300B,+Tigard,+OR+97223&output=embed',

@@ -1,11 +1,9 @@
 import { company } from '../data/site'
-import bg from '../assets/photos/van-home.jpg'
 import { Phone } from './Icons'
 
 export default function CtaCall() {
   return (
     <section className="ctacall" aria-label="Call us">
-      <img className="ctacall__bg" src={bg} alt="" aria-hidden="true" loading="lazy" />
       <div className="wrap ctacall__inner" data-reveal>
         <p className="eyebrow eyebrow--onDark">
           <span className="dot" aria-hidden="true" /> Emergency locksmith, any hour

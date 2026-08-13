@@ -14,7 +14,7 @@ npm run preview  # serve the production build locally
 ## Page order
 
 Hero (with callback form) → emergency CTA → services → 24/7 emergency →
-about → service areas → call CTA → contact form + map → footer.
+how it works → about → service areas → call CTA → contact form + map → footer.
 
 ## Where to change things
 
@@ -24,6 +24,7 @@ about → service areas → call CTA → contact form + map → footer.
 | Service categories and line items | `src/data/site.js` → `services` |
 | Cities grouped by county | `src/data/site.js` → `areas` |
 | 24/7 emergency situations list | `src/data/site.js` → `emergencies` |
+| The three how-it-works steps | `src/components/Steps.jsx` |
 | Hardware brands strip | `src/data/site.js` → `brands` |
 | Colors, type scale, spacing | `src/styles.css` (`:root` tokens at the top) |
 | Headline and hero copy | `src/components/Hero.jsx` |
@@ -63,8 +64,7 @@ Brand photos live in `src/assets/photos/`, resized and compressed for the web:
 - `tech-keypad.jpg` — About section
 - `lock-service.jpg` — 24/7 emergency section
 - `van-commercial.jpg` — emergency CTA band
-- `van-home.jpg` — background of the call CTA, heavily darkened and blurred so
-  the phone number stays legible
+- `van-home.jpg` — currently unused in layout; kept for future use
 - `van.png` — transparent cut-out used in the service areas section
 
 ## Logo assets
