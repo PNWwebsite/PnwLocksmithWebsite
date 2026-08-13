@@ -21,7 +21,7 @@ how it works → about → service areas → call CTA → contact form + map →
 | What | File |
 | --- | --- |
 | Phone, address, hours, license, map URLs | `src/data/site.js` → `company` |
-| Service categories and line items | `src/data/site.js` → `services` |
+| Service categories and named services | `src/data/site.js` → `services` |
 | Cities grouped by county | `src/data/site.js` → `areas` |
 | 24/7 emergency situations list | `src/data/site.js` → `emergencies` |
 | The three how-it-works steps | `src/components/Steps.jsx` |

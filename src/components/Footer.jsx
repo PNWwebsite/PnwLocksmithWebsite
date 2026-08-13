@@ -27,14 +27,11 @@ export default function Footer() {
           <div className="site-footer__col">
             <h3>Services</h3>
             <ul>
-              {services.map((s) => (
-                <li key={s.id}>
-                  <a href="#services">{s.label} locksmith</a>
+              {services.flatMap((s) => s.items).map((item) => (
+                <li key={item.name}>
+                  <a href="#services">{item.name}</a>
                 </li>
               ))}
-              <li>
-                <a href="#emergency">Emergency lockouts</a>
-              </li>
             </ul>
           </div>
 

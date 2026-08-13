@@ -31,9 +31,14 @@ export default function Services() {
 
                 <ul className="svc__list">
                   {s.items.map((item) => (
-                    <li key={item}>
-                      <Check size={16} />
-                      <span>{item}</span>
+                    <li key={item.name}>
+                      <span className="svc__tick" aria-hidden="true">
+                        <Check size={13} />
+                      </span>
+                      <span>
+                        <strong>{item.name}</strong>
+                        {item.blurb}
+                      </span>
                     </li>
                   ))}
                 </ul>

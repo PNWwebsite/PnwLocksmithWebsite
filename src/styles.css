@@ -774,21 +774,38 @@ section {
 }
 .svc__list {
   display: grid;
-  gap: 9px;
-  margin: 22px 0 26px;
-  padding-top: 20px;
+  gap: 18px;
+  margin: 22px 0 28px;
+  padding-top: 22px;
   border-top: 1px dashed var(--line);
 }
 .svc__list li {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: flex-start;
-  font-size: 0.93rem;
+  font-size: 0.89rem;
+  line-height: 1.55;
+  color: var(--stone);
 }
-.svc__list svg {
-  color: var(--green);
+.svc__tick {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
   flex: none;
-  margin-top: 4px;
+  margin-top: 2px;
+  background: rgba(78, 159, 47, 0.12);
+  color: var(--green-dk);
+}
+.svc__list strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  margin-bottom: 3px;
 }
 .svc__link {
   margin-top: auto;

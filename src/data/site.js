@@ -25,14 +25,18 @@ export const services = [
     blurb:
       'Locked out at 2 a.m., or finally replacing the hardware the last owner left behind. We work on the door you already have.',
     items: [
-      'House and apartment lockouts',
-      'Rekey locks after a move or a lost key',
-      'Deadbolt and handleset installation',
-      'Lock repair and replacement',
-      'Smart locks and keypad deadbolts',
-      'Sliding door, patio and window locks',
-      'Mailbox, garage and shed locks',
-      'Broken key extraction',
+      {
+        name: 'Residential Locksmith',
+        blurb: 'Home lock service of every kind, from a jammed deadbolt to a full hardware upgrade.',
+      },
+      {
+        name: 'Lock Rekeying',
+        blurb: 'New keys for the locks you already own — faster and cheaper than replacing them after a move.',
+      },
+      {
+        name: 'Lock Replacement',
+        blurb: 'Worn, damaged or outdated locks swapped for hardware that holds up to daily use.',
+      },
     ],
   },
   {
@@ -43,14 +47,14 @@ export const services = [
     blurb:
       'Keyed alike systems, panic hardware, and doors that have to open every morning and lock every night without a fight.',
     items: [
-      'Office and storefront lockouts',
-      'Master key systems and rekeying',
-      'Grade 1 commercial lock installs',
-      'Panic bars and exit devices',
-      'Door closers and aluminum door hardware',
-      'Keypad, fob and access control',
-      'File cabinet and desk locks',
-      'Employee turnover rekeys',
+      {
+        name: 'Commercial Locksmith',
+        blurb: 'Storefronts, offices and rental property, including master key systems and exit devices.',
+      },
+      {
+        name: 'High-Security Locks',
+        blurb: 'Restricted keyways and pick-resistant cylinders for doors where a standard lock is not enough.',
+      },
     ],
   },
   {
@@ -61,14 +65,18 @@ export const services = [
     blurb:
       'Keys cut and programmed on site for most makes and model years, including push-to-start vehicles. No tow needed.',
     items: [
-      'Car, truck and van lockouts',
-      'All keys lost replacement',
-      'Transponder key cutting and programming',
-      'Key fob and remote programming',
-      'Push-to-start smart keys',
-      'Ignition repair and replacement',
-      'Broken key extraction',
-      'Motorcycle, RV and trailer keys',
+      {
+        name: 'Car Locksmith',
+        blurb: 'Keys, fobs, ignitions and door locks for most makes and model years, handled at the roadside.',
+      },
+      {
+        name: 'Car Key Replacement',
+        blurb: 'Lost every key? We cut and program a replacement on site, including transponder and smart keys.',
+      },
+      {
+        name: 'Car Lockout',
+        blurb: 'Keys shut in the cabin or the trunk, opened without damage to the door, glass or trim.',
+      },
     ],
   },
 ]
