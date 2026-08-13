@@ -33,9 +33,9 @@ export default function Header() {
       <div className="utilbar">
         <div className="wrap utilbar__row">
           <p className="utilbar__left">
-            <span className="dot" aria-hidden="true" /> Open 24/7 · {company.license}
+            <span className="dot" aria-hidden="true" /> 24/7 emergency locksmith
           </p>
-          <p className="utilbar__right">{company.addressLine}</p>
+          <p className="utilbar__right">{company.license}</p>
         </div>
       </div>
 

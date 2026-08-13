@@ -13,8 +13,8 @@ npm run preview  # serve the production build locally
 
 ## Page order
 
-Hero (with callback form) → emergency CTA → services → about → service areas →
-call CTA → contact form + map → footer.
+Hero (with callback form) → emergency CTA → services → 24/7 emergency →
+about → service areas → call CTA → contact form + map → footer.
 
 ## Where to change things
 
@@ -22,7 +22,8 @@ call CTA → contact form + map → footer.
 | --- | --- |
 | Phone, address, hours, license, map URLs | `src/data/site.js` → `company` |
 | Service categories and line items | `src/data/site.js` → `services` |
-| Cities and counties, grouped with distances | `src/data/site.js` → `areas` |
+| Cities grouped by county | `src/data/site.js` → `areas` |
+| 24/7 emergency situations list | `src/data/site.js` → `emergencies` |
 | Hardware brands strip | `src/data/site.js` → `brands` |
 | Colors, type scale, spacing | `src/styles.css` (`:root` tokens at the top) |
 | Headline and hero copy | `src/components/Hero.jsx` |
@@ -55,6 +56,17 @@ The contact section embeds Google Maps with the plain `output=embed` URL, so no
 API key is needed. If you later want styled maps or a custom marker, swap
 `company.mapEmbed` for a Maps Embed API URL and add your key.
 
+## Photography
+
+Brand photos live in `src/assets/photos/`, resized and compressed for the web:
+
+- `tech-keypad.jpg` — About section
+- `lock-service.jpg` — 24/7 emergency section
+- `van-commercial.jpg` — emergency CTA band
+- `van-home.jpg` — background of the call CTA, heavily darkened and blurred so
+  the phone number stays legible
+- `van.png` — transparent cut-out used in the service areas section
+
 ## Logo assets
 
 - `src/assets/logo.png` — your original mark, cropped to its content bounds.
@@ -84,5 +96,4 @@ the mountains and evergreens in the mark.
   real domain, and add an `og:image`.
 - Confirm the `dispatch@` email in `site.js` is a real inbox.
 - Add an `og:image` at 1200×630 to `public/` for link previews.
-- Verify every listed city is one you actually want calls from — the distances
-  are straight-line estimates from the Tigard address, not drive times.
+- Verify every listed city in `areas` is one you actually want calls from.

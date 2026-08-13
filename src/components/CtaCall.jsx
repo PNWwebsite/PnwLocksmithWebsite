@@ -1,20 +1,20 @@
 import { company } from '../data/site'
+import bg from '../assets/photos/van-home.jpg'
 import { Phone } from './Icons'
 
 export default function CtaCall() {
   return (
     <section className="ctacall" aria-label="Call us">
+      <img className="ctacall__bg" src={bg} alt="" aria-hidden="true" loading="lazy" />
       <div className="wrap ctacall__inner" data-reveal>
         <p className="eyebrow eyebrow--onDark">
-          <span className="dot" aria-hidden="true" /> No call centre. No hold music.
+          <span className="dot" aria-hidden="true" /> Emergency locksmith, any hour
         </p>
         <h2 className="ctacall__title">One number, any hour</h2>
         <a className="ctacall__number" href={company.phoneHref}>
           {company.phoneDisplay}
         </a>
-        <p className="ctacall__sub">
-          {company.hours} · {company.license} · {company.addressLine}
-        </p>
+        <p className="ctacall__sub">24/7</p>
         <div className="ctacall__actions">
           <a className="btn btn--primary btn--lg" href={company.phoneHref}>
             <Phone size={19} />

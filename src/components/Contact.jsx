@@ -9,11 +9,11 @@ export default function Contact() {
         <header className="sechead" data-reveal>
           <p className="eyebrow">Contact</p>
           <h2 className="sechead__title">
-            Find us, or have us <em>come to you</em>
+            Get a locksmith <em>on the way</em>
           </h2>
           <p className="sechead__lede">
-            The shop is on SW Oak St in Tigard, a minute off Highway 217. Most work happens at your
-            door, so calling is usually the fastest route.
+            We are based in Tigard, Oregon and come to you. Calling is the fastest way to reach a
+            locksmith, day or night — or send the details and we will call you back.
           </p>
         </header>
 

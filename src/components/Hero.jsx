@@ -23,8 +23,8 @@ export default function Hero() {
           </h1>
 
           <p className="hero__lede">
-            {company.name} is a licensed, mobile locksmith based on SW Oak St in Tigard. Homes,
-            businesses and vehicles, day or night, anywhere within 20 miles of the shop.
+            {company.name} is a licensed, mobile locksmith based in Tigard, Oregon. Professional
+            residential, commercial and automotive locksmith services, around the clock.
           </p>
 
           <div className="hero__actions">
@@ -48,7 +48,7 @@ export default function Hero() {
             </li>
             <li>
               <Pin size={18} />
-              <span>Mobile vans across the metro</span>
+              <span>Fully stocked mobile vans</span>
             </li>
           </ul>
         </div>

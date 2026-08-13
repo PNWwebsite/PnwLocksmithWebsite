@@ -8,7 +8,7 @@ export default function Services() {
         <header className="sechead" data-reveal>
           <p className="eyebrow">What we do</p>
           <h2 className="sechead__title">
-            Three trucks worth of tools, <em>one phone number</em>
+            Locksmith work for <em>home, business and vehicle</em>
           </h2>
           <p className="sechead__lede">
             Every job is quoted before it starts. If a lock can be repaired instead of replaced, we

@@ -33,7 +33,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <a href="#services">Emergency lockouts</a>
+                <a href="#emergency">Emergency lockouts</a>
               </li>
             </ul>
           </div>
@@ -44,7 +44,7 @@ export default function Footer() {
               <li><a href="#about">About us</a></li>
               <li><a href="#areas">Service areas</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li><a href={company.mapLink} target="_blank" rel="noreferrer">Find the shop</a></li>
+              <li><a href="#emergency">24/7 emergency</a></li>
             </ul>
           </div>
 
