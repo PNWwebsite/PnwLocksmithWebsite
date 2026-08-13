@@ -25,10 +25,10 @@ export default function App() {
       <main>
         <Hero />
         <CallbackBar />
-        <CtaBand />
         <Services />
         <Emergency />
         <Steps />
+        <CtaBand />
         <About />
         <Areas />
         <Faq />

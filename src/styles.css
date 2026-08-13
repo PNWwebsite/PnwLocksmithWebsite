@@ -700,7 +700,7 @@ section {
 /* ============================ callback bar ============================ */
 
 .cbbar {
-  background: linear-gradient(180deg, var(--paper) 0%, var(--paper) 50%, var(--mint) 50%);
+  background: var(--paper);
   padding-bottom: clamp(20px, 3vw, 34px);
 }
 .cbbar__card {
@@ -845,8 +845,8 @@ section {
 /* ============================ green CTA band ============================ */
 
 .ctaband {
-  background: var(--mint);
-  padding: clamp(30px, 4vw, 46px) 0 clamp(56px, 7vw, 90px);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper) 50%, var(--mint) 50%);
+  padding: clamp(26px, 3.5vw, 44px) 0;
 }
 .ctaband__row {
   display: flex;
