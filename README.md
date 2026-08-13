@@ -13,7 +13,7 @@ npm run preview  # serve the production build locally
 
 ## Page order
 
-Hero (van + copy) → inline callback bar → emergency CTA → services →
+Hero (full-bleed photo panel) → inline callback bar → emergency CTA → services →
 24/7 emergency → how it works → about → service areas → call CTA →
 contact form + map → footer.
 
@@ -66,7 +66,8 @@ Brand photos live in `src/assets/photos/`, resized and compressed for the web:
 - `lock-service.jpg` — 24/7 emergency section
 - `van-commercial.jpg` — emergency CTA band
 - `van-home.jpg` — currently unused in layout; kept for future use
-- `van.png` — transparent cut-out, the hero image
+- `hero-tech.jpg` — full-bleed hero panel background
+- `van.png` — transparent cut-out, currently unused
 
 ## Logo assets
 
