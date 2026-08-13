@@ -14,22 +14,6 @@ export default function CtaBand() {
             </p>
 
             <h2 className="ctaband__title">Locked out right now?</h2>
-            <p className="ctaband__sub">
-              Emergency lockouts around the clock — nights, weekends and holidays included. A
-              licensed locksmith answers the phone in person, emergency calls go out ahead of
-              scheduled work, and you get a price before anyone touches your door.
-            </p>
-
-            <a className="btn btn--huge" href={company.phoneHref}>
-              <span className="btn__hugeIco" aria-hidden="true">
-                <Phone size={26} />
-              </span>
-              <span className="btn__hugeText">
-                <small>Tap to call — 24/7 emergency line</small>
-                <strong>{company.phoneDisplay}</strong>
-              </span>
-            </a>
-
             <ul className="ctaband__points">
               <li>
                 <Clock size={16} />
@@ -44,6 +28,16 @@ export default function CtaBand() {
                 <span>Licensed {company.license} · bonded &amp; insured</span>
               </li>
             </ul>
+
+            <a className="btn btn--huge" href={company.phoneHref}>
+              <span className="btn__hugeIco" aria-hidden="true">
+                <Phone size={26} />
+              </span>
+              <span className="btn__hugeText">
+                <small>Tap to call — 24/7 emergency line</small>
+                <strong>{company.phoneDisplay}</strong>
+              </span>
+            </a>
           </div>
 
           <div className="ctaband__media">
