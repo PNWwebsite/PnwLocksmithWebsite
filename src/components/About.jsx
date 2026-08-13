@@ -1,5 +1,4 @@
 import { company } from '../data/site'
-import Ridgeline from './Ridgeline'
 import photo from '../assets/photos/tech-keypad.jpg'
 import { Check } from './Icons'
 
@@ -15,7 +14,7 @@ export default function About() {
     <section className="about" id="about">
       <div className="wrap about__grid">
         <div className="about__copy" data-reveal>
-          <p className="eyebrow eyebrow--onDark">About PNW Lock and Key</p>
+          <p className="eyebrow">About PNW Lock and Key</p>
           <h2 className="about__title">
             Local locksmiths who <em>answer the phone</em>
           </h2>
@@ -81,7 +80,6 @@ export default function About() {
         </div>
       </div>
 
-      <Ridgeline className="ridge--toPaper" />
     </section>
   )
 }

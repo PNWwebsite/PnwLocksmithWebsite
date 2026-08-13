@@ -65,12 +65,20 @@ export default function ContactForm({ variant = 'full', id }) {
     <form className={`form form--${variant}`} id={id} onSubmit={submit} noValidate>
       <div className="form__head">
         <p className="eyebrow">Request a callback</p>
-        <h3>{variant === 'compact' ? 'Tell us what happened' : 'Send us the details'}</h3>
-        <p className="form__sub">
-          {variant === 'compact'
-            ? 'We answer around the clock and give you a price before any work starts.'
-            : 'Fill this in and a licensed locksmith calls you back.'}
-        </p>
+        <h3>
+          {variant === 'bar'
+            ? 'Tell us what happened and we will call you back'
+            : variant === 'compact'
+              ? 'Tell us what happened'
+              : 'Send us the details'}
+        </h3>
+        {variant !== 'bar' && (
+          <p className="form__sub">
+            {variant === 'compact'
+              ? 'We answer around the clock and give you a price before any work starts.'
+              : 'Fill this in and a licensed locksmith calls you back.'}
+          </p>
+        )}
       </div>
 
       <div className="form__grid">
@@ -102,18 +110,20 @@ export default function ContactForm({ variant = 'full', id }) {
           {errors.phone && <p className="field__error">{errors.phone}</p>}
         </div>
 
-        <div className="field">
-          <label htmlFor={fieldId('city')}>
-            {variant === 'compact' ? 'City' : 'City or cross street'}
-          </label>
-          <input
-            id={fieldId('city')}
-            type="text"
-            value={values.city}
-            onChange={set('city')}
-            placeholder="Beaverton"
-          />
-        </div>
+        {variant !== 'bar' && (
+          <div className="field">
+            <label htmlFor={fieldId('city')}>
+              {variant === 'full' ? 'City or cross street' : 'City'}
+            </label>
+            <input
+              id={fieldId('city')}
+              type="text"
+              value={values.city}
+              onChange={set('city')}
+              placeholder="Beaverton"
+            />
+          </div>
+        )}
 
         <div className="field">
           <label htmlFor={fieldId('service')}>What do you need?</label>
@@ -139,12 +149,23 @@ export default function ContactForm({ variant = 'full', id }) {
             />
           </div>
         )}
+
+        {variant === 'bar' && (
+          <div className="field form__submit">
+            <button className="btn btn--primary btn--block" type="submit">
+              <span>Request a callback</span>
+              <Arrow size={18} />
+            </button>
+          </div>
+        )}
       </div>
 
-      <button className="btn btn--primary btn--block" type="submit">
-        <span>Request a callback</span>
-        <Arrow size={18} />
-      </button>
+      {variant !== 'bar' && (
+        <button className="btn btn--primary btn--block" type="submit">
+          <span>Request a callback</span>
+          <Arrow size={18} />
+        </button>
+      )}
 
       <p className="form__note">
         Locked out right now? Call{' '}

@@ -79,16 +79,20 @@ will disappear against the dark background.
 
 ## Design notes
 
-Palette is taken from the logo: navy `#0D2544`, greens `#4E9F2F` and `#74C43F`,
-with a cool mist `#EEF2EC` for light sections. Type is Archivo for display,
-Public Sans for body, and JetBrains Mono reserved for the licensed-trade data —
-license number, hours, mileages — so those details read as specifications rather
-than marketing.
+Light and open: white and a soft evergreen mist `#F2F7F0`, with the logo's navy
+`#0D2544` and greens `#4E9F2F` / `#6FBF3B` used as accents rather than as the
+field. Type is Archivo for display, Public Sans for body, and JetBrains Mono
+reserved for licensed-trade data — license number, hours, labels — so those read
+as specifications rather than marketing.
 
-The recurring element is the ridgeline that forms the seam between sections. It
-is a single SVG component (`Ridgeline.jsx`) filled with whatever color comes
-next, so the following section appears to rise out of the landscape. It echoes
-the mountains and evergreens in the mark.
+The hero leads with the van cut out against a soft gradient, bleeding off the
+right edge, with a callback bar straddling the boundary below it. Buttons and
+icon badges are pill and circle shaped throughout.
+
+The recurring element is the ridgeline seam (`Ridgeline.jsx`), now used once, at
+the foot of the services section, filled with the color of the section that
+follows so it appears to rise out of the landscape. It echoes the mountains and
+evergreens in the mark.
 
 ## Before launch
 

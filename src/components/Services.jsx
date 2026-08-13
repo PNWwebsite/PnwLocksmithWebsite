@@ -1,5 +1,6 @@
 import { services, brands, company } from '../data/site'
 import { icons, Check, Phone } from './Icons'
+import Ridgeline from './Ridgeline'
 
 export default function Services() {
   return (
@@ -61,6 +62,8 @@ export default function Services() {
           </ul>
         </div>
       </div>
+
+      <Ridgeline className="ridge--toMist" />
     </section>
   )
 }
