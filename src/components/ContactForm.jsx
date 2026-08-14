@@ -13,10 +13,21 @@ const SERVICE_OPTIONS = [
 
 const empty = { name: '', phone: '', city: '', service: '', message: '' }
 
+const FORM_NAME = 'callback'
+
+// Netlify Forms expects a URL-encoded POST to the site root.
+const encode = (data) =>
+  Object.keys(data)
+    .map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(data[k] ?? '')}`)
+    .join('&')
+
 export default function ContactForm({ variant = 'full', id }) {
   const [values, setValues] = useState(empty)
   const [errors, setErrors] = useState({})
   const [sent, setSent] = useState(false)
+  const [busy, setBusy] = useState(false)
+  const [failed, setFailed] = useState(false)
+  const [botField, setBotField] = useState('')
 
   const isBar = variant === 'bar'
   const fieldId = (n) => `${id || variant}-${n}`
@@ -29,9 +40,10 @@ export default function ContactForm({ variant = 'full', id }) {
   const reset = () => {
     setValues(empty)
     setSent(false)
+    setFailed(false)
   }
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
     const next = {}
     if (!values.name.trim()) next.name = 'Add a name so we know who to ask for.'
@@ -41,9 +53,28 @@ export default function ContactForm({ variant = 'full', id }) {
     setErrors(next)
     if (Object.keys(next).length) return
 
-    // Wire this up to your form handler (Formspree, Netlify Forms, your CRM).
-    console.log('Callback request', values)
-    setSent(true)
+    setBusy(true)
+    setFailed(false)
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': FORM_NAME,
+          'bot-field': botField,
+          source: variant,
+          ...values,
+        }),
+      })
+      if (!res.ok) throw new Error(`Form POST failed: ${res.status}`)
+      setSent(true)
+    } catch (err) {
+      // Local dev has no Netlify form handler, so this path is expected there.
+      console.error(err)
+      setFailed(true)
+    } finally {
+      setBusy(false)
+    }
   }
 
   if (sent) {
@@ -70,7 +101,18 @@ export default function ContactForm({ variant = 'full', id }) {
   }
 
   return (
-    <form className={`form form--${variant}`} id={id} onSubmit={submit} noValidate>
+    <form
+      className={`form form--${variant}`}
+      id={id}
+      name={FORM_NAME}
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      onSubmit={submit}
+      noValidate
+    >
+      <input type="hidden" name="form-name" value={FORM_NAME} />
+      <input type="hidden" name="source" value={variant} />
       {!isBar && (
         <div className="form__head">
           <p className="eyebrow">Request a callback</p>
@@ -82,6 +124,20 @@ export default function ContactForm({ variant = 'full', id }) {
           </p>
         </div>
       )}
+
+      <p className="form__hp" aria-hidden="true">
+        <label>
+          Do not fill this in
+          <input
+            type="text"
+            name="bot-field"
+            tabIndex={-1}
+            autoComplete="off"
+            value={botField}
+            onChange={(e) => setBotField(e.target.value)}
+          />
+        </label>
+      </p>
 
       <div className="form__grid">
         <div className="field">
@@ -154,8 +210,8 @@ export default function ContactForm({ variant = 'full', id }) {
 
         {isBar && (
           <div className="field field--submit">
-            <button className="btn btn--primary" type="submit">
-              <span>Request a callback</span>
+            <button className="btn btn--primary" type="submit" disabled={busy}>
+              <span>{busy ? 'Sending…' : 'Request a callback'}</span>
               <Arrow size={17} />
             </button>
           </div>
@@ -163,10 +219,17 @@ export default function ContactForm({ variant = 'full', id }) {
       </div>
 
       {!isBar && (
-        <button className="btn btn--primary btn--block" type="submit">
-          <span>Request a callback</span>
+        <button className="btn btn--primary btn--block" type="submit" disabled={busy}>
+          <span>{busy ? 'Sending…' : 'Request a callback'}</span>
           <Arrow size={18} />
         </button>
+      )}
+
+      {failed && (
+        <p className="form__failed" role="alert">
+          That did not send. Please call <a href={company.phoneHref}>{company.phoneDisplay}</a> —
+          someone picks up at any hour.
+        </p>
       )}
 
       <p className="form__note">

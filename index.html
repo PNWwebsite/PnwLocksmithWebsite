@@ -65,6 +65,22 @@
     </script>
   </head>
   <body>
+    <!--
+      Netlify Forms detection stub. Netlify scans the built HTML for forms at
+      deploy time, and a React-rendered form is not present then. This hidden
+      form declares the name and fields; ContactForm.jsx posts to it.
+      Keep the field names here in sync with the ones in ContactForm.jsx.
+    -->
+    <form name="callback" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="text" name="city" />
+      <input type="text" name="service" />
+      <textarea name="message"></textarea>
+      <input type="text" name="source" />
+      <input type="text" name="bot-field" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

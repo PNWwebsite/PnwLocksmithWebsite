@@ -34,23 +34,32 @@ Everything factual lives in `site.js`, so updating the phone number or adding a
 city is a one-line edit that propagates to the header, hero, CTAs, contact
 panel, footer and schema.
 
-## Wiring up the form
+## The form (Netlify Forms)
 
-`src/components/ContactForm.jsx` currently validates input, logs the payload and
-shows a confirmation. To send it somewhere real, replace the `console.log` in
-`submit()` with a POST:
+Both forms post to a single Netlify form named `callback`.
 
-```js
-await fetch('https://formspree.io/f/YOUR_ID', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(values),
-})
-```
+Netlify detects forms by scanning the built HTML at deploy time, and a
+React-rendered form does not exist at that point. So `index.html` carries a
+hidden stub form declaring the name and every field. `ContactForm.jsx` then
+sends a URL-encoded POST to `/` with a `form-name` field matching the stub.
 
-Netlify Forms, Formspree, Basin or a CRM webhook all work the same way. The same
-component powers both forms via the `variant` prop (`compact` in the hero,
-`full` in the contact section), so you only wire it once.
+**If you add or rename a field, update both places** — the stub in `index.html`
+and the state in `ContactForm.jsx` — or the new field will be dropped from
+submissions.
+
+Submissions arrive under Forms in the Netlify dashboard. Set up notifications
+there (Project configuration → Notifications) so callback requests reach an
+inbox or phone rather than sitting in the dashboard.
+
+A `source` field records which form was used, `bar` or `full`, and a honeypot
+field named `bot-field` catches basic spam.
+
+Submitting only works on the deployed site or under `netlify dev`. On a plain
+`npm run dev` the POST has nowhere to go, and the form falls back to a message
+pointing at the phone number — that is expected locally, not a bug.
+
+To use a different handler instead (Formspree, a CRM webhook), replace the
+`fetch` call in `submit()` and delete the stub from `index.html`.
 
 ## Map
 
