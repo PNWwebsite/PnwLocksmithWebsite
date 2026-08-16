@@ -1,5 +1,5 @@
 import { company } from '../data/site'
-import van from '../assets/photos/van.png'
+import van from '../assets/photos/van-860.webp'
 import { KeyIcon, Phone } from './Icons'
 
 export default function CtaCall() {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.webp'
 import { company } from '../data/site'
 import { Phone, Menu, Close } from './Icons'
 
@@ -15,11 +15,20 @@ export default function Header() {
   const [open, setOpen] = useState(false)
   const [stuck, setStuck] = useState(false)
 
+  // A sentinel above the header avoids reading window.scrollY on every scroll
+  // event, which forces layout.
   useEffect(() => {
-    const onScroll = () => setStuck(window.scrollY > 8)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    const sentinel = document.createElement('div')
+    sentinel.setAttribute('aria-hidden', 'true')
+    sentinel.style.cssText = 'position:absolute;top:0;left:0;height:8px;width:1px;pointer-events:none;'
+    document.body.prepend(sentinel)
+
+    const io = new IntersectionObserver(([entry]) => setStuck(!entry.isIntersecting))
+    io.observe(sentinel)
+    return () => {
+      io.disconnect()
+      sentinel.remove()
+    }
   }, [])
 
   useEffect(() => {
@@ -55,7 +64,11 @@ export default function Header() {
           </nav>
 
           <div className="masthead__actions">
-            <a className="btn btn--call" href={company.phoneHref}>
+            <a
+              className="btn btn--call"
+              href={company.phoneHref}
+              aria-label={`Call ${company.phoneDisplay}`}
+            >
               <Phone size={17} />
               <span>{company.phoneDisplay}</span>
             </a>

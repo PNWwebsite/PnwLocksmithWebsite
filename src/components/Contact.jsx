@@ -1,13 +1,26 @@
+import { useState } from 'react'
 import { company } from '../data/site'
 import ContactForm from './ContactForm'
-import bg from '../assets/photos/hero-tech.jpg'
 import { KeyIcon, Phone, Pin, Clock, Shield } from './Icons'
 
 export default function Contact() {
+  // The Google Maps embed pulls in a large third-party payload, so it only
+  // loads once the visitor asks for it.
+  const [mapOn, setMapOn] = useState(false)
+
   return (
     <section className="contact" id="contact">
       <div className="contact__top">
-        <img className="contact__bg" src={bg} alt="" aria-hidden="true" loading="lazy" />
+        <img
+          className="contact__bg"
+          src="/hero/hero-tech-1400.webp"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          width="1400"
+          height="788"
+        />
         <div className="contact__scrim" aria-hidden="true" />
         <header className="wrap contact__head" data-reveal>
           <p className="eyebrow eyebrow--onDark">
@@ -70,13 +83,25 @@ export default function Contact() {
             </ul>
 
             <div className="contact__map">
-              <iframe
-                title={`Map to ${company.name}, ${company.addressLine}`}
-                src={company.mapEmbed}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
+              {mapOn ? (
+                <iframe
+                  title={`Map to ${company.name}, ${company.addressLine}`}
+                  src={company.mapEmbed}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              ) : (
+                <button type="button" className="contact__mapBtn" onClick={() => setMapOn(true)}>
+                  <span className="contact__mapPin" aria-hidden="true">
+                    <Pin size={22} />
+                  </span>
+                  <span>
+                    <strong>Show the map</strong>
+                    {company.addressLine}
+                  </span>
+                </button>
+              )}
             </div>
           </div>
 

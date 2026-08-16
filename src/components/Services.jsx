@@ -1,7 +1,7 @@
 import { services, brands, company } from '../data/site'
-import residentialShot from '../assets/photos/tech-keypad.jpg'
-import commercialShot from '../assets/photos/van-commercial.jpg'
-import automotiveShot from '../assets/photos/auto-key.jpg'
+import residentialShot from '../assets/photos/tech-keypad-760.webp'
+import commercialShot from '../assets/photos/van-commercial-760.webp'
+import automotiveShot from '../assets/photos/auto-key-760.webp'
 import Ridgeline from './Ridgeline'
 import { icons, Check, Phone, KeyIcon } from './Icons'
 

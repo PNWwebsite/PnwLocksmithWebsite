@@ -1,5 +1,4 @@
 import { company } from '../data/site'
-import heroPhoto from '../assets/photos/hero-tech.jpg'
 import { Phone, Arrow, Clock, Shield, Pin, KeyIcon } from './Icons'
 
 function Badge() {
@@ -31,7 +30,17 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero__panel">
-        <img className="hero__photo" src={heroPhoto} alt="" fetchPriority="high" />
+        <img
+          className="hero__photo"
+          src="/hero/hero-tech-1400.webp"
+          srcSet="/hero/hero-tech-800.webp 800w, /hero/hero-tech-1400.webp 1400w"
+          sizes="100vw"
+          width="1400"
+          height="788"
+          alt=""
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="hero__scrim" aria-hidden="true" />
 
         <div className="hero__inner">

@@ -1,5 +1,5 @@
 import { areas, company } from '../data/site'
-import bg from '../assets/photos/van-commercial.jpg'
+import bg from '../assets/photos/van-commercial-760.webp'
 import { KeyIcon, Phone, Pin } from './Icons'
 
 export default function Areas() {

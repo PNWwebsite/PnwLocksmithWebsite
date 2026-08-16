@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { company } from '../data/site'
-import photo from '../assets/photos/tech-keypad.jpg'
+import photo from '../assets/photos/tech-keypad-760.webp'
 import { KeyIcon, Phone, Arrow } from './Icons'
 
 const faqs = [

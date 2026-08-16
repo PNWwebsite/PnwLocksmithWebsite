@@ -1,5 +1,5 @@
 import { company } from '../data/site'
-import photo from '../assets/photos/van-commercial.jpg'
+import photo from '../assets/photos/van-commercial-760.webp'
 import { Phone, Clock, Shield, Check } from './Icons'
 
 export default function CtaBand() {

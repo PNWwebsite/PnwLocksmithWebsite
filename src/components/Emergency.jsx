@@ -1,5 +1,5 @@
 import { company, emergencies } from '../data/site'
-import photo from '../assets/photos/night-call.jpg'
+import photo from '../assets/photos/night-call-680.webp'
 import { Phone, Clock, Check } from './Icons'
 
 export default function Emergency() {

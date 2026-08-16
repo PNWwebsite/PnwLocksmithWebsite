@@ -110,6 +110,29 @@ the foot of the services section, filled with the color of the section that
 follows so it appears to rise out of the landscape. It echoes the mountains and
 evergreens in the mark.
 
+## Performance notes
+
+Lighthouse mobile, measured against the production build served with gzip:
+performance 97, accessibility 100, best practices 100, SEO 100.
+
+Things that matter if you change assets or markup:
+
+- **Images are WebP at render size.** Source masters (`.jpg` / `.png`) stay in
+  the repo but are not imported, so they never ship. If you add a photo,
+  export a WebP sized to the box it renders into rather than importing the
+  master.
+- **The hero image lives in `public/hero/`**, not `src/assets`, so it keeps a
+  stable filename and can be preloaded from `index.html`. That preload is what
+  makes the LCP image discoverable before React runs — if you rename the file,
+  update the `<link rel="preload">` too.
+- **Fonts load without blocking render** via the `media="print"` swap in
+  `index.html`. The `noscript` copy is the fallback.
+- **The Google map is a facade.** It only loads the iframe after the visitor
+  clicks, keeping a large third party off the initial load.
+- **`--green-action` (#3F8324) is for anything with white text on it.**
+  The lighter `--green` fails WCAG AA at 4.5:1 against white; use it only for
+  decorative fills and tints.
+
 ## Before launch
 
 - Point `og:url` and the `url` field in the JSON-LD (in `index.html`) at the

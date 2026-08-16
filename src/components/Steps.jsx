@@ -1,6 +1,6 @@
 import { company } from '../data/site'
-import shotA from '../assets/photos/van-tools.jpg'
-import shotB from '../assets/photos/lock-door.jpg'
+import shotA from '../assets/photos/van-tools-680.webp'
+import shotB from '../assets/photos/lock-door-560.webp'
 import { KeyIcon } from './Icons'
 
 // A real sequence, so the numbering carries information rather than decoration.

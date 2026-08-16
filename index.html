@@ -20,9 +20,39 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!--
+      Fonts are loaded without blocking render: the stylesheet is fetched with
+      media="print" so it is not render-blocking, then switched to all on load.
+      The noscript copy covers scripting-disabled clients.
+      The width axis was dropped when font-stretch left the stylesheet.
+    -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,600;100,700;110,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    />
+    <link
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      />
+    </noscript>
+
+    <!-- LCP image: preloaded so it is discoverable before React renders -->
+    <link
+      rel="preload"
+      as="image"
+      href="/hero/hero-tech-1400.webp"
+      imagesrcset="/hero/hero-tech-800.webp 800w, /hero/hero-tech-1400.webp 1400w"
+      imagesizes="100vw"
+      fetchpriority="high"
     />
 
     <script type="application/ld+json">
